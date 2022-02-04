@@ -1,6 +1,33 @@
 <h1>Editing Book</h1>
 
-<%= render 'form', book: @book %>
+
+
+<%= form_with model: @book do |form| %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+  
+    <div>
+      <%= form.label :author %>
+      <%= form.text_field :author %>
+    </div>
+
+    <div>
+      <%= form.label :price %>
+      <%= form.number_field :price %>
+    </div>
+
+    <div>
+      <%= form.label :date_published %>
+      <%= form.date_field :date_published %>
+    </div>
+
+  
+    <div>
+      <%= form.submit %>
+    </div>
+<% end %>
 
 <%= link_to 'Show', @book %> |
 <%= link_to 'Back', books_path %>
